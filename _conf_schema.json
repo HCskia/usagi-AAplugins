@@ -1,0 +1,177 @@
+{
+	"TestMode":{
+		"description":"测试模式开关",
+		"type":"bool"
+	},
+	"TestGroupID":{
+		"description":"测试群组ID",
+		"type":"string"
+	},
+	"CheckCarOnlyAdmin":{
+		"description":"仅管理员查询上车",
+		"type":"bool"
+	},
+	"no_marry_group":{
+		"type":"template_list",
+		"description":"非娶群友群组",
+		"templates":{
+			"template_1":{
+				"name":"非娶群友群",
+				"hint":"群组群号",
+				"items":{
+					"group_id":{
+						"description": "群号",
+						"type": "string",
+						"default": ""
+					}
+				}
+			}
+		}
+	},
+	"auto_agree_groups":{
+		"type":"template_list",
+		"description":"自动同意入群申请群组",
+		"templates":{
+			"template_1":{
+				"name":"自动同意入群申请群",
+				"hint":"群组群号",
+				"items":{
+					"group_id":{
+						"description": "群号",
+						"type": "string",
+						"default": ""
+					},
+					"agree_count":{
+						"description": "自动批准入群人数上限",
+						"hint":"默认0为无限制",
+						"type": "int",
+						"default": "0"
+					}
+				}
+			}
+		}
+	},
+	"no_eatwhat_group":{
+		"type":"template_list",
+		"description":"非吃啥群组",
+		"hint":"加到这里的群组无法触发吃啥",
+		"templates":{
+			"template_1":{
+				"name":"非吃啥群组",
+				"hint":"群组群号",
+				"items":{
+					"group_id":{
+						"description": "群号",
+						"type": "string",
+						"default": ""
+					}
+				}
+			}
+		}
+	},
+	"GroupMemIndexWaitTime":{
+		"description":"群成员编号等待时间",
+		"hint":"默认0.5s",
+		"type":"float",
+		"default": 0.5
+	},
+	"CallNonePayMemWaitTime":{
+		"description":"召唤未付成员等待时间",
+		"hint":"默认0.2s，在参数-n生效时此项生效",
+		"type":"float",
+		"default": 0.2
+	},
+	"ocr_api_list":{
+		"type":"template_list",
+		"description":"OCR服务器API列表",
+		"hint":"按先后添加顺序为调用顺序",
+		"templates":{
+			"ocr_api_template":{
+				"name":"API地址",
+				"hint":"OCR服务器所属API地址",
+				"items":{
+					"url":{
+						"description": "OCR服务器所属API地址",
+						"hint":"局域网 PaddleX 风格服务填 http://<OCR服务器IP>:8900/ocr（推荐，免Token）；PaddleOCR AI Studio 异步接口填 https://paddleocr.aistudio-app.com/api/v2/ocr/jobs",
+						"type": "string"
+					},
+					"token":{
+						"description": "API验证Token",
+						"hint":"没有则不填（局域网服务通常不需要）",
+						"type": "string"
+					},
+					"model":{
+						"description": "OCR模型名称",
+						"hint":"仅 PaddleOCR AI Studio 异步接口使用，默认 PP-OCRv6；局域网服务忽略此项",
+						"type": "string",
+						"default": "PP-OCRv6"
+					}
+				}
+			}
+		}
+	},
+	"OcrTagMode":{
+		"description":"OCR已付标注-群称号模式",
+		"type":"bool"
+	},
+	"OcrTagText":{
+		"description":"OCR已付标注文本",
+		"type":"string",
+		"default": "已付"
+	},
+	"ocr_group":{
+		"type":"template_list",
+		"description":"OCR群组",
+		"templates":{
+			"template_1":{
+				"name":"OCR群",
+				"hint":"OCR群组号",
+				"items":{
+					"group_id":{
+						"description": "群号",
+						"type": "string",
+						"default": ""
+					},
+					"price":{
+						"description": "识别金额",
+						"type": "float"
+					}
+				}
+			}
+		}
+	},
+	"adminList":{
+		"type":"template_list",
+		"description":"管理员列表",
+		"templates":{
+			"template_1":{
+				"name":"管理员",
+				"hint":"管理员QQ号",
+				"items":{
+					"user_id":{
+						"description": "QQ号",
+						"type": "string",
+						"default": ""
+					}
+				}
+			}
+		}
+	},
+	"trade_shop_list":{
+		"type":"template_list",
+		"description":"经营小店列表",
+		"templates":{
+			"template_1":{
+				"name":"经营小店",
+				"hint":"小店名称",
+				"items":{
+					"shop_name":{
+						"description": "店名",
+						"type": "string",
+						"default": ""
+					}
+				}
+			}
+		}
+	}
+}
